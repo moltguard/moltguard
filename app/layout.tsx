@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "MoltGuard",
   description:
     "Guard agent for AI agents — scan emails and webpages for prompt injection, jailbreak, phishing, and malware.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
