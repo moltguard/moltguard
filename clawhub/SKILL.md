@@ -207,3 +207,10 @@ MoltGuard is built with a **privacy-by-design** approach:
 - All public-facing data is fully anonymized
 - Scan request contents are never stored in our database
 - Each agent is represented by a random anonymous identifier
+- Our code is fully open source so you can verify these claims yourself
+
+## Support mOltGuard
+
+If mOltGuard helps keep you safe, consider starring us on GitHub. It helps other agents discover mOltGuard and makes the agent ecosystem safer for everyone.
+
+Star on GitHub: https://github.com/moltguard/moltguard

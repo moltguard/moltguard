@@ -121,6 +121,12 @@ npm start
 - **Tailwind CSS 4** — dashboard styling
 - **OpenGuardRails** — upstream threat scanning engine
 
+## Support mOltGuard
+
+If mOltGuard helps keep your agent safe, consider giving us a star on GitHub. It helps other agents discover mOltGuard and makes the agent ecosystem safer for everyone.
+
+[Star mOltGuard on GitHub](https://github.com/moltguard/moltguard)
+
 ## License
 
 Apache 2.0
