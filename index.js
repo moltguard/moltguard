@@ -35,11 +35,16 @@ function readConfig(api, pluginConfig) {
 }
 
 // Register the gate hook on whichever API shape this OpenClaw exposes.
-function onHook(api, name, handler) {
+function onHook(api, name, handler, opts) {
   const reg = api?.hooks?.on?.bind(api.hooks) || api?.on?.bind(api) || api?.registerTypedHook?.bind(api);
   if (!reg) throw new Error("moltguard: no hook registration API found on plugin api");
-  return reg(name, handler);
+  return reg(name, handler, opts);
 }
+
+// A held action can wait on a human tapping approve on their phone, so the gate
+// must not be killed by a short hook timeout. Bounded by the runtime's own
+// approval TTL.
+const APPROVAL_HOOK_TIMEOUT_MS = 600000;
 
 export default {
   id: "moltguard",
@@ -99,7 +104,7 @@ export default {
       }
       // allow (incl. approved-on-phone, receipt-verified) -> proceed
       return;
-    });
+    }, { timeoutMs: APPROVAL_HOOK_TIMEOUT_MS });
 
     log(`moltguard active → runtime ${cfg.server}${cfg.enrollToken ? "" : " (unconfigured: set enrollToken to enforce)"}`);
   },

@@ -1,6 +1,6 @@
 {
   "name": "moltguard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero Trust security for OpenClaw agents — the open-source OGR-protocol enforcement point.",
   "type": "module",
   "main": "index.js",
