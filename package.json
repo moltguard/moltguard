@@ -1,0 +1,16 @@
+{
+  "name": "moltguard",
+  "version": "1.0.0",
+  "description": "Zero Trust security for OpenClaw agents — the open-source OGR-protocol enforcement point.",
+  "type": "module",
+  "main": "index.js",
+  "homepage": "https://moltguard.com",
+  "repository": { "type": "git", "url": "https://github.com/moltguard/moltguard" },
+  "keywords": ["openclaw", "openguardrails", "ogr", "ai-agent", "security", "zero-trust", "guardrails"],
+  "license": "Apache-2.0",
+  "engines": { "node": ">=20" },
+  "openclaw": {
+    "extensions": ["./index.js"]
+  },
+  "files": ["index.js", "lib/", "skill/", "openclaw.plugin.json", "README.md", "LICENSE"]
+}

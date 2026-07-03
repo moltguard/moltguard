@@ -1,0 +1,44 @@
+{
+  "id": "moltguard",
+  "name": "moltguard",
+  "description": "Zero Trust security for OpenClaw agents. The OGR-protocol enforcement point (agent-hook altitude): every tool call is checked against your OpenGuardrails Runtime before it executes — block, allow, or hold for phone approval.",
+  "homepage": "https://moltguard.com",
+  "activation": {
+    "onStartup": true
+  },
+  "kind": "hook",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean" },
+      "server": {
+        "type": "string",
+        "description": "OpenGuardrails Runtime base URL (or set OGR_SERVER)."
+      },
+      "enrollToken": {
+        "type": "string",
+        "description": "Tenant enroll token from your runtime (or set OGR_ENROLL_TOKEN)."
+      },
+      "principal": {
+        "type": "string",
+        "description": "Human principal this agent acts for, e.g. you@corp (or OGR_PRINCIPAL)."
+      },
+      "failOpenWhenUnconfigured": {
+        "type": "boolean",
+        "description": "When moltguard has no runtime configured, allow tool calls (default true) instead of blocking."
+      },
+      "heartbeatIntervalS": {
+        "type": "integer",
+        "minimum": 15,
+        "maximum": 3600,
+        "description": "How often to heartbeat the runtime (went-dark detection + kill switch)."
+      }
+    }
+  },
+  "uiHints": {
+    "server": { "label": "Runtime URL", "help": "Your OpenGuardrails Runtime endpoint." },
+    "enrollToken": { "label": "Enroll Token", "help": "One-time tenant enroll token from the runtime console." },
+    "principal": { "label": "Principal", "help": "Who this agent acts for — shown on approvals." }
+  }
+}
